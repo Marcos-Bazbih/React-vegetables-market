@@ -1,7 +1,6 @@
 #fruitsList{
-    width: 100%;
+    width: 70%;
     height: 100%;
     overflow: auto;
     list-style-position: inside;
-    text-align: center;
 }

@@ -6,13 +6,16 @@
 html{
     font-size: 62.5%;
 }
-.App{
+body{
     background:wheat;
+}
+.App{
     width: 100%;
     height: fit-content;
     display: grid;
     grid-template-rows: 15vh repeat(4, 50vh );
     gap: 3em;
+    margin-bottom: 20vh;
 }
 
 
@@ -23,6 +26,7 @@ html{
     height: 100%;
     color: indigo;
     font-size: 3rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,16 +36,44 @@ html{
 
 
 .item-container{
-    width: 98%;
+    width: 98vw;
     margin: auto;
     height: 100%;
     display: flex;
     border: 5px double indigo;
     border-radius: 200px;
 }
+.item-container:nth-of-type(1){
+    background: url("https://cdn.pixabay.com/photo/2016/02/20/21/41/vegetables-1212845_960_720.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: bottom;
+}
+.item-container:nth-of-type(2){
+    background: url("https://cdn.pixabay.com/photo/2017/05/11/19/44/fresh-fruits-2305192_960_720.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: top;
+}
+.item-container:nth-of-type(3){
+    background: url("https://cdn.pixabay.com/photo/2019/05/07/09/01/spices-4185324_960_720.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: bottom;
+}
+.item-container:nth-of-type(4){
+    background: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/healthy-canned-foods-1585319385.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: top;
+}
+
+
 
 
 .add-item-card{
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 200px 0 0 200px;
     width: 50%;
     height: 100%;
     display: flex;
@@ -57,27 +89,25 @@ html{
     text-align: center;
     width: 70%;
     font-size: 2rem;
+    font-weight: 900;
     color: indigo;
     overflow: auto;
 }
-
-
-.list-card{
-    width: 50%;
-    height: 100%;
-}
-
-
-
 .add-item-input{
     background: wheat;
+    color: indigo;
     border: 5px double indigo;
     border-radius: 50px;
-    font-size: 2rem;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    transition: 0.2s;
+    font-weight: 900;
 }
-
-
-
+.add-item-input:hover, .add-item-input:focus{
+    background: indigo;
+    color: wheat;
+    border-color: wheat;
+}
 .add-item-btn{
     cursor: pointer;
     padding: 10px 20px;
@@ -92,5 +122,19 @@ html{
 .add-item-btn:hover{
     border-color: indigo;
     background: wheat;
+    color: indigo;
+}
+
+
+
+.list-card{
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 0 200px 200px 0;
+    width: 50%;
+    height: 100%;
+}
+.list-li{
+    font-size: 2rem;
+    font-weight: 900;
     color: indigo;
 }

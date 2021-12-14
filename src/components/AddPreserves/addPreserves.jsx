@@ -17,7 +17,7 @@ class AddPreserves extends React.Component {
     }
     addItemToList() {
         document.getElementById("preservesList").innerHTML +=
-            `<li>${this.state.preservesName}</li>`
+            `<li class="list-li">${this.state.preservesName}</li>`
     }
 
     render() {
@@ -25,8 +25,8 @@ class AddPreserves extends React.Component {
             <section className="item-container">
                 <article className="add-item-card">
                     <h1 className="add-item-h1">Add preserves</h1>
-                    <input className="add-item-input" id="preservesInput" type="text" onChange={this.updatePreservesName} />
-                    <button className="add-item-btn" onClick={this.addItemToList}>Click</button>
+                    <input className="add-item-input" maxLength={15} id="preservesInput" type="text" onChange={this.updatePreservesName} />
+                    <button className="add-item-btn" onClick={this.addItemToList}>Add To List</button>
                     <p className="add-item-p">{this.state.preservesName}</p>
                 </article>
                 <article className="list-card">
