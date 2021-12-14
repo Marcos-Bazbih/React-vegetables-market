@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+.App{
+    background:wheat;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-rows: 15vh repeat(4, 50vh );
+    gap: 3em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+
+.main-header-title{
+    width: 100%;
+    height: 100%;
+    color: indigo;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+
+.item-container{
+    width: 98%;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    border: 5px double indigo;
+    border-radius: 200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.add-item-card{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.add-item-h1{
+    font-size: 3rem;
+    color: indigo;
+}
+.add-item-p{
+    text-align: center;
+    width: 70%;
+    font-size: 2rem;
+    color: indigo;
+    overflow: auto;
 }
 
-.App-link {
-  color: #61dafb;
+
+.list-card{
+    width: 50%;
+    height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.add-item-input{
+    background: wheat;
+    border: 5px double indigo;
+    border-radius: 50px;
+    font-size: 2rem;
+}
+
+
+
+.add-item-btn{
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 5px double wheat;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    background: indigo;
+    color: wheat;
+    transition: 0.2s;
+    font-weight: 900;
+}
+.add-item-btn:hover{
+    border-color: indigo;
+    background: wheat;
+    color: indigo;
 }
