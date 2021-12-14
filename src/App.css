@@ -40,7 +40,7 @@ body{
     margin: auto;
     height: 100%;
     display: flex;
-    border: 5px double indigo;
+    border: 10px double indigo;
     border-radius: 200px;
 }
 .item-container:nth-of-type(1){
