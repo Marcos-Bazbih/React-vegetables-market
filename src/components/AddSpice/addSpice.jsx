@@ -12,12 +12,12 @@ class AddSpice extends React.Component {
         this.addItemToList = this.addItemToList.bind(this);
     }
 
-    updateSpiceName() {
-        this.setState({ spiceName: document.getElementById("spiceInput").value });
+    updateSpiceName(event) {
+        this.state.spiceName = event.target.value;
     }
     addItemToList() {
-        document.getElementById("spicesList").innerHTML +=
-            `<li class="list-li">${this.state.spiceName}</li>`
+        this.state.spicesArray.push(this.state.spiceName);
+        this.setState({ spiceName: this.state.spiceName });
     }
 
     render() {
@@ -25,12 +25,16 @@ class AddSpice extends React.Component {
             <section className="item-container">
                 <article className="add-item-card">
                     <h1 className="add-item-h1">Add spice</h1>
-                    <input className="add-item-input" maxLength={15} id="spiceInput" type="text" onChange={this.updateSpiceName} />
+                    <input className="add-item-input" maxLength={15} type="text" onChange={this.updateSpiceName} />
                     <button className="add-item-btn" onClick={this.addItemToList}>Add To List</button>
                     <p className="add-item-p">{this.state.spiceName}</p>
                 </article>
                 <article className="list-card">
-                    <ul id="spicesList"></ul>
+                    <ul id="spicesList">
+                        {
+                            this.state.spicesArray.map(item => <li className="list-li">{item}</li>)
+                        }
+                    </ul>
                 </article>
             </section>
         )

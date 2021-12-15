@@ -12,12 +12,12 @@ class AddFruit extends React.Component {
         this.addItemToList = this.addItemToList.bind(this);
     }
 
-    updateFruitName() {
-        this.setState({ fruitName: document.getElementById("fruitInput").value });
+    updateFruitName(event) {
+        this.state.fruitName = event.target.value;
     }
     addItemToList() {
-        document.getElementById("fruitsList").innerHTML +=
-            `<li class="list-li">${this.state.fruitName}</li>`
+        this.state.fruitsArray.push(this.state.fruitName);
+        this.setState({ fruitName: this.state.fruitName });
     }
 
     render() {
@@ -25,12 +25,16 @@ class AddFruit extends React.Component {
             <section className="item-container">
                 <article className="add-item-card">
                     <h1 className="add-item-h1">Add fruit</h1>
-                    <input className="add-item-input" maxLength={15} id="fruitInput" type="text" onChange={this.updateFruitName} />
+                    <input className="add-item-input" maxLength={15} type="text" onChange={this.updateFruitName} />
                     <button className="add-item-btn" onClick={this.addItemToList}>Add To List</button>
                     <p className="add-item-p">{this.state.fruitName}</p>
                 </article>
                 <article className="list-card">
-                    <ul id="fruitsList"></ul>
+                    <ul id="fruitsList">
+                        {
+                            this.state.fruitsArray.map(item => <li className="list-li">{item}</li>)
+                        }
+                    </ul>
                 </article>
             </section>
         )
